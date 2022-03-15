@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Workout} from '../types/data';
+import {secToMin} from '../utils/time';
 
 export default function WorkoutItem({item}: {item: Workout}) {
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{item.name}</Text>
-      <Text style={styles.duration}>Duration: {item.duration}</Text>
+      <Text style={styles.duration}>Duration: {secToMin(item.duration)}</Text>
       <Text style={styles.difficulty}>Difficulty: {item.difficulty}</Text>
     </View>
   );
